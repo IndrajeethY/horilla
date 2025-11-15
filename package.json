@@ -1,7 +1,7 @@
 {
-  "name": "openhrms-core",
+  "name": "kite-hrms",
   "version": "1.0.0",
-  "description": "",
+  "description": "Kite HRMS - Human Resource Management System",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArjunCybro/OpenHRMS-Dashboard.git"
+    "url": "git+https://github.com/IndrajeethY/horilla.git"
   },
-  "author": "OpenHRMS",
+  "author": "Kite HRMS",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ArjunCybro/OpenHRMS-Dashboard/issues"
+    "url": "https://github.com/IndrajeethY/horilla/issues"
   },
-  "homepage": "https://github.com/ArjunCybro/OpenHRMS-Dashboard#readme",
+  "homepage": "https://github.com/IndrajeethY/horilla#readme",
   "devDependencies": {
     "laravel-mix": "^6.0.49"
   },
