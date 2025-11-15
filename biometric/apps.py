@@ -21,8 +21,8 @@ class BiometricConfig(AppConfig):
     def ready(self):
         from django.urls import include, path
 
-        from horilla.horilla_settings import APPS
-        from horilla.urls import urlpatterns
+        from kite.kite_settings import APPS
+        from kite.urls import urlpatterns
 
         APPS.append("biometric")
         urlpatterns.append(

@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IndrajeethY/horilla.git"
+    "url": "git+https://github.com/IndrajeethY/kite.git"
   },
   "author": "Kite HRMS",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/IndrajeethY/horilla/issues"
+    "url": "https://github.com/IndrajeethY/kite/issues"
   },
-  "homepage": "https://github.com/IndrajeethY/horilla#readme",
+  "homepage": "https://github.com/IndrajeethY/kite#readme",
   "devDependencies": {
     "laravel-mix": "^6.0.49"
   },

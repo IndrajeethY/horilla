@@ -166,8 +166,8 @@ from employee.models import (
     EmployeeWorkInformation,
     ProfileEditFeature,
 )
-from horilla import horilla_apps
-from horilla.decorators import (
+from kite import kite_apps
+from kite.decorators import (
     delete_permission,
     duplicate_permission,
     hx_request_required,
@@ -175,17 +175,17 @@ from horilla.decorators import (
     manager_can_enter,
     permission_required,
 )
-from horilla.group_by import group_by_queryset
-from horilla.horilla_settings import (
+from kite.group_by import group_by_queryset
+from kite.kite_settings import (
     APPS,
     DB_INIT_PASSWORD,
     DYNAMIC_URL_PATTERNS,
     FILE_STORAGE,
     NO_PERMISSION_MODALS,
 )
-from horilla.methods import get_horilla_model_class, remove_dynamic_url
-from horilla_audit.forms import HistoryTrackingFieldsForm
-from horilla_audit.models import AccountBlockUnblock, AuditTag, HistoryTrackingFields
+from kite.methods import get_kite_model_class, remove_dynamic_url
+from kite_audit.forms import HistoryTrackingFieldsForm
+from kite_audit.models import AccountBlockUnblock, AuditTag, HistoryTrackingFields
 from notifications.models import Notification
 from notifications.signals import notify
 
@@ -1319,7 +1319,7 @@ def object_delete(request, obj_id, **kwargs):
         ),
 
     if apps.is_installed("pms") and redirect_path == "/pms/filter-key-result/":
-        KeyResult = get_horilla_model_class(app_label="pms", model="keyresult")
+        KeyResult = get_kite_model_class(app_label="pms", model="keyresult")
         key_results = KeyResult.objects.all()
         if key_results.exists():
             previous_data = request.GET.urlencode()
@@ -2619,7 +2619,7 @@ def employee_shift_view(request):
 
     shifts = EmployeeShift.objects.all()
     if apps.is_installed("attendance"):
-        GraceTime = get_horilla_model_class(app_label="attendance", model="gracetime")
+        GraceTime = get_kite_model_class(app_label="attendance", model="gracetime")
         grace_times = GraceTime.objects.all().exclude(is_default=True)
     else:
         grace_times = None
@@ -5198,10 +5198,10 @@ def general_settings(request):
     This method is used to render settings template
     """
     if apps.is_installed("payroll"):
-        PayrollSettings = get_horilla_model_class(
+        PayrollSettings = get_kite_model_class(
             app_label="payroll", model="payrollsettings"
         )
-        EncashmentGeneralSettings = get_horilla_model_class(
+        EncashmentGeneralSettings = get_kite_model_class(
             app_label="payroll", model="encashmentgeneralsettings"
         )
         from payroll.forms.component_forms import PayrollSettingsForm

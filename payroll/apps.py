@@ -18,8 +18,8 @@ class PayrollConfig(AppConfig):
         ready = super().ready()
         from django.urls import include, path
 
-        from horilla.horilla_settings import APPS
-        from horilla.urls import urlpatterns
+        from kite.kite_settings import APPS
+        from kite.urls import urlpatterns
         from payroll import signals
 
         APPS.append("payroll")
