@@ -4,3 +4,4 @@ from django.apps import AppConfig
 class HorillaAuditConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
     name = "kite_audit"
+    label = "horilla_audit"
