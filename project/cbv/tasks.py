@@ -16,13 +16,13 @@ from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from base.methods import get_subordinates
-from horilla_views.cbv_methods import login_required
-from horilla_views.generic.cbv.views import (
-    HorillaCardView,
-    HorillaDetailedView,
-    HorillaFormView,
-    HorillaListView,
-    HorillaNavView,
+from kite_views.cbv_methods import login_required
+from kite_views.generic.cbv.views import (
+    KiteCardView,
+    KiteDetailedView,
+    KiteFormView,
+    KiteListView,
+    KiteNavView,
     TemplateView,
 )
 from project.cbv.project_stage import StageDynamicCreateForm
@@ -46,7 +46,7 @@ class TasksTemplateView(TemplateView):
 
 
 @method_decorator(login_required, name="dispatch")
-class TaskListView(HorillaListView):
+class TaskListView(KiteListView):
     """
     list view of the page
     """
@@ -165,7 +165,7 @@ class TaskListView(HorillaListView):
 
 
 @method_decorator(login_required, name="dispatch")
-class TasksNavBar(HorillaNavView):
+class TasksNavBar(KiteNavView):
     """
     navbar of teh page
     """
@@ -246,7 +246,7 @@ class TasksNavBar(HorillaNavView):
 
 
 @method_decorator(login_required, name="dispatch")
-class TaskCreateForm(HorillaFormView):
+class TaskCreateForm(KiteFormView):
     """
     Form view for create and update tasks
     """
@@ -402,7 +402,7 @@ class DynamicTaskCreateFormView(TaskCreateForm):
 
 
 @method_decorator(login_required, name="dispatch")
-class TaskDetailView(HorillaDetailedView):
+class TaskDetailView(KiteDetailedView):
     """
     detail view of the task page
     """
@@ -429,7 +429,7 @@ class TaskDetailView(HorillaDetailedView):
 
 
 @method_decorator(login_required, name="dispatch")
-class TaskCardView(HorillaCardView):
+class TaskCardView(KiteCardView):
     """
     card view of the page
     """
@@ -574,7 +574,7 @@ class TasksInIndividualView(TaskListView):
                 """
 
     def get_queryset(self):
-        queryset = HorillaListView.get_queryset(self)
+        queryset = KiteListView.get_queryset(self)
         employee_id = self.request.GET.get("employee_id")
         project_id = self.request.GET.get("project_id")
         queryset = queryset.filter(

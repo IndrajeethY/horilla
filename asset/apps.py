@@ -22,8 +22,8 @@ class AssetConfig(AppConfig):
     def ready(self):
         from django.urls import include, path
 
-        from horilla.horilla_settings import APP_URLS, APPS
-        from horilla.urls import urlpatterns
+        from kite.kite_settings import APP_URLS, APPS
+        from kite.urls import urlpatterns
 
         APPS.append("asset")
         urlpatterns.append(

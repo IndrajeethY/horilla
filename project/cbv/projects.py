@@ -14,13 +14,13 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import ListView
 
 from employee.models import Employee
-from horilla.horilla_middlewares import _thread_locals
-from horilla_views.cbv_methods import login_required, permission_required
-from horilla_views.generic.cbv.views import (
-    HorillaCardView,
-    HorillaFormView,
-    HorillaListView,
-    HorillaNavView,
+from kite.kite_middlewares import _thread_locals
+from kite_views.cbv_methods import login_required, permission_required
+from kite_views.generic.cbv.views import (
+    KiteCardView,
+    KiteFormView,
+    KiteListView,
+    KiteNavView,
     TemplateView,
 )
 from project.cbv.cbv_decorators import is_projectmanager_or_member_or_perms
@@ -51,7 +51,7 @@ class ProjectsView(TemplateView):
 @method_decorator(
     is_projectmanager_or_member_or_perms("project.view_project"), name="dispatch"
 )
-class ProjectsNavView(HorillaNavView):
+class ProjectsNavView(KiteNavView):
     """
     Nav bar
     """
@@ -149,7 +149,7 @@ class ProjectsNavView(HorillaNavView):
 @method_decorator(
     is_projectmanager_or_member_or_perms("project.view_project"), name="dispatch"
 )
-class ProjectsList(HorillaListView):
+class ProjectsList(KiteListView):
     """
     Projects list view
     """
@@ -274,7 +274,7 @@ class ProjectsList(HorillaListView):
 
 @method_decorator(login_required, name="dispatch")
 # @method_decorator(permission_required("project.add_project"), name="dispatch")
-class ProjectFormView(HorillaFormView):
+class ProjectFormView(KiteFormView):
     """
     form view for create project
     """
@@ -326,7 +326,7 @@ class DynamicProjectCreationFormView(ProjectFormView):
 @method_decorator(
     is_projectmanager_or_member_or_perms("project.view_project"), name="dispatch"
 )
-class ProjectCardView(HorillaCardView):
+class ProjectCardView(KiteCardView):
     """
     For card view
     """

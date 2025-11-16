@@ -6,10 +6,10 @@ from django.db import models
 
 from accessibility.accessibility import ACCESSBILITY_FEATURE
 from employee.models import Employee
-from horilla.models import HorillaModel
+from kite.models import KiteModel
 
 
-class DefaultAccessibility(HorillaModel):
+class DefaultAccessibility(KiteModel):
     """
     DefaultAccessibilityModel
     """

@@ -10,15 +10,15 @@ from django.views.generic import View
 
 from dynamic_fields import forms, models
 from dynamic_fields.methods import structured
-from horilla.decorators import login_required, permission_required
-from horilla_views.generic.cbv.views import HorillaFormView
+from kite.decorators import login_required, permission_required
+from kite_views.generic.cbv.views import KiteFormView
 
 
 @method_decorator(login_required, name="dispatch")
 @method_decorator(
     permission_required("dynamic_fields.change_mailautomation"), name="dispatch"
 )
-class ChoiceFormView(HorillaFormView):
+class ChoiceFormView(KiteFormView):
     """
     ChoiceFormView
     """
@@ -32,7 +32,7 @@ class ChoiceFormView(HorillaFormView):
 @method_decorator(
     permission_required("dynamic_fields.change_mailautomation"), name="dispatch"
 )
-class DynamicFieldFormView(HorillaFormView):
+class DynamicFieldFormView(KiteFormView):
     """
     DynamicFieldFormView
     """
