@@ -50,7 +50,7 @@ def dynamic_attr(obj, attribute_path):
     return obj
 
 
-def horilla_users_with_perms(permissions):
+def kite_users_with_perms(permissions):
     """
     Filters users who have any of the specified permissions or are superusers.
 

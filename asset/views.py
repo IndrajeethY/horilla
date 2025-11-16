@@ -788,7 +788,7 @@ def asset_allocate_return_request(request, asset_id):
     asset_assign.save()
     message = _("Return request for {} initiated.").format(asset_assign.asset_id)
     messages.success(request, message)
-    permed_users = horilla_users_with_perms("asset.change_assetassignment")
+    permed_users = kite_users_with_perms("asset.change_assetassignment")
     notify.send(
         request.user.employee_get,
         recipient=permed_users,
