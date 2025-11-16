@@ -1,5 +1,5 @@
 """
-This module provides Horilla ModelForms for creating and managing leave-related data,
+This module provides Kite ModelForms for creating and managing leave-related data,
 including leave type, leave request, leave allocation request, holidays and company leaves.
 """
 
@@ -23,7 +23,7 @@ from employee.filters import EmployeeFilter
 from employee.forms import MultipleFileField
 from employee.models import Employee
 from kite import kite_middlewares
-from kite_widgets.forms import HorillaForm, KiteModelForm
+from kite_widgets.forms import KiteForm, KiteModelForm
 from kite_widgets.widgets.kite_multi_select_field import KiteMultiSelectField
 from kite_widgets.widgets.select_widgets import KiteMultiSelectWidget
 from leave.methods import get_leave_day_attendance
@@ -696,7 +696,7 @@ class LeaveRequestExportForm(forms.Form):
     )
 
 
-class AssignLeaveForm(HorillaForm):
+class AssignLeaveForm(KiteForm):
     """
     Form for Payslip
     """

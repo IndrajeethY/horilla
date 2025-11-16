@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from attendance.models import *
-from base.models import HorillaMailTemplate
+from base.models import KiteMailTemplate
 
 
 class AttendanceSerializer(serializers.ModelSerializer):
@@ -208,7 +208,7 @@ class AttendanceActivitySerializer(serializers.ModelSerializer):
 
 class MailTemplateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = HorillaMailTemplate
+        model = KiteMailTemplate
         fields = "__all__"
 
 

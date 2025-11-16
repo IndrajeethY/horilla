@@ -1,5 +1,5 @@
 """
-horilla/generic/views.py
+kite/generic/views.py
 """
 
 import io
@@ -71,7 +71,7 @@ class KiteListView(ListView):
         ("pdf", "PDF"),
     ]
 
-    template_name: str = "generic/horilla_list_table.html"
+    template_name: str = "generic/kite_list_table.html"
     context_object_name = "queryset"
     # column = [("Verbose Name","field_name","avatar_mapping")], opt: avatar_mapping
     columns: list = []
@@ -1412,7 +1412,7 @@ class KiteListView(ListView):
 
 class KiteSectionView(TemplateView):
     """
-    Horilla Template View
+    Kite Template View
     """
 
     def __init__(self, **kwargs: Any) -> None:
@@ -1430,7 +1430,7 @@ class KiteSectionView(TemplateView):
     script_static_paths: list = []
     style_static_paths: list = []
 
-    template_name = "generic/horilla_section.html"
+    template_name = "generic/kite_section.html"
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
@@ -1462,7 +1462,7 @@ class KiteDetailedView(DetailView):
     """
 
     title = "Detailed View"
-    template_name = "generic/horilla_detailed_view.html"
+    template_name = "generic/kite_detailed_view.html"
     header: dict = {
         "title": "Kite",
         "subtitle": "Kite Detailed View",
@@ -1550,7 +1550,7 @@ class KiteTabView(TemplateView):
     """
 
     view_id: str = get_short_uuid(3, "htv")
-    template_name = "generic/horilla_tabs.html"
+    template_name = "generic/kite_tabs.html"
     show_filter_tags = False
 
     tabs: list = []
@@ -1609,7 +1609,7 @@ class KiteCardView(ListView):
 
     view_id: str = get_short_uuid(4, prefix="hcv")
 
-    template_name = "generic/horilla_card.html"
+    template_name = "generic/kite_card.html"
     context_object_name = "queryset"
 
     search_url: str = ""
@@ -2072,7 +2072,7 @@ class KiteNavView(TemplateView):
     filter form submit button id: applyFilter
     """
 
-    template_name = "generic/horilla_nav.html"
+    template_name = "generic/kite_nav.html"
 
     nav_title: str = ""
     search_url: str = ""
@@ -2197,7 +2197,7 @@ class KiteProfileView(DetailView):
     GenericKiteProfileView
     """
 
-    template_name = "generic/horilla_profile_view.html"
+    template_name = "generic/kite_profile_view.html"
     view_id: str = None
     filter_class: FilterSet = None
     push_url: str = None

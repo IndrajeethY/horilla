@@ -1,5 +1,5 @@
 """
-ASGI config for horilla project.
+ASGI config for kite project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

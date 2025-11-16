@@ -1,12 +1,12 @@
 """
-horilla_automations/filters.py
+kite_automations/filters.py
 """
 
-from kite.filters import HorillaFilterSet, django_filters
+from kite.filters import kitefilterset, django_filters
 from kite_automations.models import MailAutomation
 
 
-class AutomationFilter(HorillaFilterSet):
+class AutomationFilter(kitefilterset):
     """
     AutomationFilter
     """

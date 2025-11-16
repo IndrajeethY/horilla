@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _trans
 
 from base.methods import eval_validate
-from base.models import HorillaMailTemplate
+from base.models import KiteMailTemplate
 from employee.models import Employee
 from kite.models import KiteModel
 from kite_views.cbv_methods import render_template
@@ -52,7 +52,7 @@ class MailAutomation(KiteModel):
     # udpate the on_update logic to if and only if when
     # changes in the previous and current value
     mail_template = models.ForeignKey(
-        HorillaMailTemplate, on_delete=models.CASCADE, null=True, blank=True
+        KiteMailTemplate, on_delete=models.CASCADE, null=True, blank=True
     )
     also_sent_to = models.ManyToManyField(
         Employee,
@@ -66,7 +66,7 @@ class MailAutomation(KiteModel):
         verbose_name=_trans("Choose Delivery Channel"),
     )
     template_attachments = models.ManyToManyField(
-        HorillaMailTemplate,
+        KiteMailTemplate,
         related_name="template_attachment",
         blank=True,
     )
@@ -114,13 +114,13 @@ class MailAutomation(KiteModel):
             display = display[:-1]
             mappings.append(display)
         return render_template(
-            "horilla_automations/mail_to.html", {"instance": self, "mappings": mappings}
+            "kite_automations/mail_to.html", {"instance": self, "mappings": mappings}
         )
 
     def get_mail_cc_display(self):
         employees = self.also_sent_to.all()
         return render_template(
-            "horilla_automations/mail_cc.html", {"employees": employees}
+            "kite_automations/mail_cc.html", {"employees": employees}
         )
 
     def detailed_url(self):
@@ -128,7 +128,7 @@ class MailAutomation(KiteModel):
 
     def conditions(self):
         return render_template(
-            "horilla_automations/conditions.html", {"instance": self}
+            "kite_automations/conditions.html", {"instance": self}
         )
 
     def delete_url(self):

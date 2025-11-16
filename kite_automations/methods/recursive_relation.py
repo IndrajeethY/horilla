@@ -1,5 +1,5 @@
 """
-horilla_automation/recursive_relation.py
+kite_automation/recursive_relation.py
 """
 
 from django.apps import apps

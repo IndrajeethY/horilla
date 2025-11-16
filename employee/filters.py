@@ -16,13 +16,13 @@ from accessibility.methods import check_is_accessible
 from accessibility.models import DefaultAccessibility
 from base.methods import filtersubordinatesemployeemodel
 from employee.models import DisciplinaryAction, Employee, Policy
-from kite.filters import FilterSet, HorillaFilterSet, filter_by_name
+from kite.filters import FilterSet, kitefilterset, filter_by_name
 from kite.kite_middlewares import _thread_locals
 from kite_documents.models import Document
 from kite_views.templatetags.generic_template_filters import getattribute
 
 
-class EmployeeFilter(HorillaFilterSet):
+class EmployeeFilter(kitefilterset):
     """
     Filter set class for Candidate model
 

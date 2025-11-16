@@ -1,5 +1,5 @@
 """
-horilla_automations/views/cbvs.py
+kite_automations/views/cbvs.py
 """
 
 import json
@@ -15,7 +15,7 @@ from django.utils.decorators import method_decorator
 from django.utils.translation import gettext_lazy as _trans
 from django.views import View
 
-from base.models import HorillaMailTemplate
+from base.models import KiteMailTemplate
 from kite.decorators import login_required, permission_required
 from kite_automations import models
 from kite_automations.filters import AutomationFilter
@@ -25,7 +25,7 @@ from kite_views.generic.cbv import views
 
 @method_decorator(login_required, name="dispatch")
 @method_decorator(
-    permission_required("horilla_automations.view_mailautomation"), name="dispatch"
+    permission_required("kite_automations.view_mailautomation"), name="dispatch"
 )
 class AutomationSectionView(views.KiteSectionView):
     """
@@ -45,7 +45,7 @@ class AutomationSectionView(views.KiteSectionView):
 
 @method_decorator(login_required, name="dispatch")
 @method_decorator(
-    permission_required("horilla_automations.view_mailautomation"), name="dispatch"
+    permission_required("kite_automations.view_mailautomation"), name="dispatch"
 )
 class AutomationNavView(views.KiteNavView):
     """
@@ -55,7 +55,7 @@ class AutomationNavView(views.KiteNavView):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.actions = []
-        if self.request.user.has_perm("horilla_automations.add_mailautomation"):
+        if self.request.user.has_perm("kite_automations.add_mailautomation"):
             self.create_attrs = f"""
                 hx-get="{reverse_lazy("create-automation")}"
                 hx-target="#genericModalBody"
@@ -76,7 +76,7 @@ class AutomationNavView(views.KiteNavView):
                 }
             )
 
-        if self.request.user.has_perm("horilla_automations.add_mailautomation"):
+        if self.request.user.has_perm("kite_automations.add_mailautomation"):
             self.actions.append(
                 {
                     "action": "Refresh Automations",
@@ -95,7 +95,7 @@ class AutomationNavView(views.KiteNavView):
 
 @method_decorator(login_required, name="dispatch")
 @method_decorator(
-    permission_required("horilla_automations.change_mailautomation"), name="dispatch"
+    permission_required("kite_automations.change_mailautomation"), name="dispatch"
 )
 class AutomationFormView(views.KiteFormView):
     """
@@ -128,7 +128,7 @@ class AutomationFormView(views.KiteFormView):
 
 @method_decorator(login_required, name="dispatch")
 @method_decorator(
-    permission_required("horilla_automations.view_mailautomation"), name="dispatch"
+    permission_required("kite_automations.view_mailautomation"), name="dispatch"
 )
 class AutomationListView(views.KiteListView):
     """
@@ -182,7 +182,7 @@ class AutomationListView(views.KiteListView):
 
 @method_decorator(login_required, name="dispatch")
 @method_decorator(
-    permission_required("horilla_automations.view_mailautomation"), name="dispatch"
+    permission_required("kite_automations.view_mailautomation"), name="dispatch"
 )
 class AutomationDetailedView(views.KiteDetailedView):
     """
@@ -230,7 +230,7 @@ class AutomationDetailedView(views.KiteDetailedView):
 
 @method_decorator(login_required, name="dispatch")
 @method_decorator(
-    permission_required("horilla_automations.add_mailautomation"), name="dispatch"
+    permission_required("kite_automations.add_mailautomation"), name="dispatch"
 )
 class LoadAutomationsView(View):
     template_name = "kite_automations/load_automation.html"
@@ -283,7 +283,7 @@ class LoadAutomationsView(View):
                 template_data = list(
                     serializers.deserialize("json", json.dumps([template_json]))
                 )[0].object
-                existing = HorillaMailTemplate.objects.filter(
+                existing = KiteMailTemplate.objects.filter(
                     title=template_data.title
                 ).first()
                 if not existing:
@@ -298,7 +298,7 @@ class LoadAutomationsView(View):
 
             template_pk = automation_json["fields"].get("mail_template")
             template_body = template_lookup.get(template_pk)
-            mail_template = HorillaMailTemplate.objects.filter(
+            mail_template = KiteMailTemplate.objects.filter(
                 body=template_body
             ).first()
             automation_obj.mail_template = mail_template

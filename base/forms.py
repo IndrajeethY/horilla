@@ -50,7 +50,7 @@ from base.models import (
     EmployeeShiftSchedule,
     EmployeeType,
     Holidays,
-    HorillaMailTemplate,
+    KiteMailTemplate,
     JobPosition,
     JobRole,
     MultipleApprovalCondition,
@@ -2209,7 +2209,7 @@ class MailTemplateForm(ModelForm):
     """
 
     class Meta:
-        model = HorillaMailTemplate
+        model = KiteMailTemplate
         fields = "__all__"
         widgets = {
             "body": forms.Textarea(

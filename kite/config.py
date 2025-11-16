@@ -1,7 +1,7 @@
 """
-horilla/config.py
+kite/config.py
 
-Horilla app configurations
+Kite app configurations
 """
 
 import importlib

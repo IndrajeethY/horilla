@@ -70,7 +70,7 @@ msgstr ""
 msgid "Default Accessibility"
 msgstr ""
 
-msgid "Limit default view access to horilla feature"
+msgid "Limit default view access to kite feature"
 msgstr ""
 
 msgid "Actions"
@@ -2466,7 +2466,7 @@ msgid "Automatic Check Out Time"
 msgstr ""
 
 msgid ""
-"Time at which the horilla will automatically check out the employee "
+"Time at which the kite will automatically check out the employee "
 "attendance if they forget."
 msgstr ""
 
@@ -4692,7 +4692,7 @@ msgstr "Settings"
 msgid "gdrive"
 msgstr "Gdrive Backup"
 
-msgid "horilla-theme"
+msgid "kite-theme"
 msgstr "Theme Customization"
 
 msgid "color-settings"
@@ -4776,7 +4776,7 @@ msgstr ""
 msgid "{} not found."
 msgstr ""
 
-msgid "Test mail from Horilla"
+msgid "Test mail from Kite"
 msgstr ""
 
 msgid "Something went wrong :"
@@ -7488,12 +7488,12 @@ msgstr ""
 msgid "Please upload {} file only."
 msgstr ""
 
-msgid "LDAP to Horilla Employee Field Mapping"
+msgid "LDAP to Kite Employee Field Mapping"
 msgstr ""
 
 #, fuzzy
 #| msgid "employee"
-msgid "Horilla Employee Field"
+msgid "Kite Employee Field"
 msgstr "Employee"
 
 msgid "LDAP Attribute Name"
@@ -13401,13 +13401,13 @@ msgid "Go To Home"
 msgstr ""
 
 msgid ""
-"Authenticate with your password to initialize the Horilla HRMS database."
+"Authenticate with your password to initialize the Kite HRMS database."
 msgstr ""
 
 msgid "Sign Up"
 msgstr ""
 
-msgid "Please sign up to access the Horilla HRMS."
+msgid "Please sign up to access the Kite HRMS."
 msgstr ""
 
 msgid "Secure Sign-up"
@@ -13933,7 +13933,7 @@ msgstr ""
 
 #, fuzzy
 #~| msgid "recruitment"
-#~ msgid "Horilla - Open Recruitments"
+#~ msgid "Kite - Open Recruitments"
 #~ msgstr "Recruitment"
 
 #, fuzzy

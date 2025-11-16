@@ -1,5 +1,5 @@
 """
-horilla/horilla_backends_gcp.py
+kite/kite_backends_gcp.py
 """
 
 from django.db import models

@@ -1,7 +1,7 @@
 """
 forms.py
 
-Horilla forms
+Kite forms
 """
 
 from typing import Any, Dict
@@ -11,10 +11,10 @@ from django import forms
 from kite_widgets.widgets.kite_multi_select_field import KiteMultiSelectField
 
 default_select_option_template = forms.Select.option_template_name
-forms.Select.option_template_name = "kite_widgets/horilla_select_option.html"
+forms.Select.option_template_name = "kite_widgets/kite_select_option.html"
 
 
-class HorillaForm(forms.Form):
+class KiteForm(forms.Form):
     def clean(self) -> Dict[str, Any]:
         for field_name, field_instance in self.fields.items():
             if isinstance(field_instance, KiteMultiSelectField):

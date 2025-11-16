@@ -1,5 +1,5 @@
 """
-horilla_automations/forms.py
+kite_automations/forms.py
 """
 
 from typing import Any

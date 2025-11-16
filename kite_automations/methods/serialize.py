@@ -1,5 +1,5 @@
 """
-horilla_automation/methods/serialize.py
+kite_automation/methods/serialize.py
 """
 
 from django import forms

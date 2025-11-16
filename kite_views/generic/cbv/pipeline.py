@@ -1,5 +1,5 @@
 """
-horilla_views/generic/cbv/pipeline
+kite_views/generic/cbv/pipeline
 """
 
 from django.db import models

@@ -1,7 +1,7 @@
 """
 select_widgets.py
 
-This module is used to write horilla form select widgets
+This module is used to write kite form select widgets
 """
 
 import uuid
@@ -49,7 +49,7 @@ class KiteMultiSelectWidget(forms.Widget):
         self.help_text = help_text
         super().__init__()
 
-    template_name = "kite_widgets/horilla_multiselect_widget.html"
+    template_name = "kite_widgets/kite_multiselect_widget.html"
 
     def get_context(self, name, value, attrs):
         # Get the default context from the parent class

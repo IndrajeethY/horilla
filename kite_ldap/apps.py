@@ -4,7 +4,7 @@ from django.conf import settings
 import kite.kite_settings
 
 
-class HorillaLdapConfig(AppConfig):
+class KiteLdapConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
     name = "kite_ldap"
 
@@ -20,7 +20,7 @@ class HorillaLdapConfig(AppConfig):
         )
         super().ready()
 
-        ldap_config = horilla.kite_settings.load_ldap_settings()
+        ldap_config = kite.kite_settings.load_ldap_settings()
 
         # Apply settings dynamically
         settings.LDAP_SERVER = ldap_config["LDAP_SERVER"]

@@ -21,7 +21,7 @@ from employee.filters import EmployeeFilter
 from employee.models import BonusPoint, Employee
 from kite import kite_middlewares
 from kite.methods import get_kite_model_class
-from kite_widgets.forms import HorillaForm, default_select_option_template
+from kite_widgets.forms import KiteForm, default_select_option_template
 from kite_widgets.widgets.kite_multi_select_field import KiteMultiSelectField
 from kite_widgets.widgets.select_widgets import KiteMultiSelectWidget
 from notifications.signals import notify
@@ -404,7 +404,7 @@ class PayslipForm(ModelForm):
         }
 
 
-class GeneratePayslipForm(HorillaForm):
+class GeneratePayslipForm(KiteForm):
     """
     Form for Payslip
     """

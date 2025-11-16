@@ -2,7 +2,7 @@ import atexit
 
 
 def shutdown_function():
-    from horilla_backup.models import GoogleDriveBackup, LocalBackup
+    from kite_backup.models import GoogleDriveBackup, LocalBackup
 
     try:
         if GoogleDriveBackup.objects.exists():

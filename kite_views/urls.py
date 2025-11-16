@@ -1,5 +1,5 @@
 """
-horilla_views/urls.py
+kite_views/urls.py
 """
 
 from django.urls import path

@@ -138,7 +138,7 @@ class FilterSet(django_filters.FilterSet):
                 widget.attrs.update({"class": existing_class})
 
 
-class HorillaPaginator(Paginator):
+class KitePaginator(Paginator):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.start_count = 0
@@ -159,9 +159,9 @@ class HorillaPaginator(Paginator):
         return self.page
 
 
-class HorillaFilterSet(FilterSet):
+class kitefilterset(FilterSet):
     """
-    HorillaFilterSet
+    kitefilterset
     """
 
     verbose_name: dict = {}

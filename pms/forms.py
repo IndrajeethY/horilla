@@ -747,7 +747,7 @@ class FeedbackForm(KiteModelForm):
                 else Employee.objects.none()
             )
 
-        # # Horilla multi-select filter for subordinates
+        # # Kite multi-select filter for subordinates
         # self.fields["subordinate_id"] = KiteMultiSelectField(
         #     queryset=Employee.objects.all(),
         #     widget=KiteMultiSelectWidget(

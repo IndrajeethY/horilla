@@ -1,7 +1,7 @@
 """
 This module extends the Django settings related to templates to include a
 custom context processor for biometric functionality.
-It imports the `TEMPLATES` setting from `horilla.settings` and appends a
+It imports the `TEMPLATES` setting from `kite.settings` and appends a
 custom context processor path to it.
 """
 

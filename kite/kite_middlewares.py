@@ -1,7 +1,7 @@
 """
 kite_middlewares.py
 
-This module is used to register horilla's middlewares without affecting the horilla/settings.py
+This module is used to register kite's middlewares without affecting the kite/settings.py
 """
 
 import threading

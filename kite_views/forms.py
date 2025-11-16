@@ -1,5 +1,5 @@
 """
-horilla_views/forms.py
+kite_views/forms.py
 """
 
 import os

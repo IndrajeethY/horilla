@@ -1,5 +1,5 @@
 """
-horilla/horilla_backends.py
+kite/kite_backends.py
 """
 
 from django.db import models

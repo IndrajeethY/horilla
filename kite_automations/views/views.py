@@ -1,5 +1,5 @@
 """
-horilla_automation/views/views.py
+kite_automation/views/views.py
 """
 
 from django import forms
@@ -45,7 +45,7 @@ def get_to_field(request):
 
 
 @login_required
-@permission_required("horilla_automations.delete_mailautomation")
+@permission_required("kite_automations.delete_mailautomation")
 def delete_automation(request, pk):
     """
     Automation delete view
@@ -60,7 +60,7 @@ def delete_automation(request, pk):
 
 
 @login_required
-@permission_required("horilla_automations.add_mailautomation")
+@permission_required("kite_automations.add_mailautomation")
 def refresh_automations(request):
     """
     Method to  refresh automation signals

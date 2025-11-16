@@ -115,7 +115,7 @@ from kite.decorators import (
     owner_can_enter,
     permission_required,
 )
-from kite.filters import HorillaPaginator
+from kite.filters import KitePaginator
 from kite.group_by import group_by_queryset
 from kite.kite_settings import KITE_DATE_FORMATS
 from kite.methods import get_kite_model_class
@@ -1043,7 +1043,7 @@ def paginator_qry(qryset, page_number):
     """
     This method is used to paginate query set
     """
-    paginator = HorillaPaginator(qryset, get_pagination())
+    paginator = KitePaginator(qryset, get_pagination())
     qryset = paginator.get_page(page_number)
     return qryset
 

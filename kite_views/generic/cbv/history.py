@@ -1,5 +1,5 @@
 """
-horilla_views/generic/cbv/history.py
+kite_views/generic/cbv/history.py
 """
 
 from django.apps import apps
@@ -20,7 +20,7 @@ class KiteHistoryView(DetailView):
     GenericKiteProfileView
     """
 
-    template_name = "generic/horilla_history_view.html"
+    template_name = "generic/kite_history_view.html"
     has_perm_to_revert = False
     fields: list = []
     history_related_name = "history"

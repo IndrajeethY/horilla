@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class HorillaApiConfig(AppConfig):
+class KiteApiConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
     name = "kite_api"
 

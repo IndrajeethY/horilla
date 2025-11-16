@@ -35,7 +35,7 @@ from kite.decorators import (
     login_required,
     permission_required,
 )
-from kite.filters import HorillaPaginator
+from kite.filters import KitePaginator
 from kite.kite_settings import BIO_DEVICE_THREADS
 from kite.settings import TIME_ZONE
 
@@ -73,7 +73,7 @@ def paginator_qry(qryset, page_number):
     """
     This method is used to paginate query set
     """
-    paginator = HorillaPaginator(qryset, get_pagination())
+    paginator = KitePaginator(qryset, get_pagination())
     qryset = paginator.get_page(page_number)
     return qryset
 
@@ -1551,7 +1551,7 @@ def edit_cosec_user(request, user_id, device_id):
 @login_required
 @install_required
 @permission_required("biometric.delete_biometricemployees")
-def delete_horilla_cosec_user(request, user_id, device_id):
+def delete_kite_cosec_user(request, user_id, device_id):
     """
     View function to delete a user from a COSEC biometric device and database.
 
@@ -1825,7 +1825,7 @@ def add_biometric_user(request, device_id):
 @hx_request_required
 def map_biometric_users(request, device_id):
     """
-    Maps an horilla employee to a biometric user on a specified biometric device.
+    Maps an kite employee to a biometric user on a specified biometric device.
     """
     device = BiometricDevices.find(device_id)
     form = MapBioUsers(request.POST or None)
@@ -2420,10 +2420,10 @@ def cosec_biometric_attendance_scheduler(device_id):
 
 def dahua_biometric_attendance_logs(device):
     """
-    Retrieves logs from a Dahua biometric device and marks attendance in Horilla.
+    Retrieves logs from a Dahua biometric device and marks attendance in Kite.
 
     This function fetches biometric logs from the specified device, processes the attendance records,
-    and updates the attendance system in Horilla. If an employee has an active clock-in record,
+    and updates the attendance system in Kite. If an employee has an active clock-in record,
     it marks their clock-out; otherwise, it registers a new clock-in entry.
 
     Args:

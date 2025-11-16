@@ -157,7 +157,7 @@ urlpatterns.append(
 
 
 def white_labelling_company(request):
-    white_labelling = getattr(horilla_apps, "WHITE_LABELLING", False)
+    white_labelling = getattr(kite_apps, "WHITE_LABELLING", False)
     if white_labelling:
         hq = Company.objects.filter(hq=True).last()
         try:

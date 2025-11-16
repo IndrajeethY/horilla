@@ -1,3 +1,3 @@
 """
-horilla_views/generic/cbv/kanban.py
+kite_views/generic/cbv/kanban.py
 """

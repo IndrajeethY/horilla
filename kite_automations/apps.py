@@ -1,5 +1,5 @@
 """
-App configuration for the Horilla Automations app.
+App configuration for the Kite Automations app.
 Initializes model choices and starts automation when the server runs.
 """
 
@@ -9,8 +9,8 @@ import sys
 from django.apps import AppConfig
 
 
-class HorillaAutomationConfig(AppConfig):
-    """Configuration class for the Horilla Automations Django app."""
+class KiteAutomationConfig(AppConfig):
+    """Configuration class for the Kite Automations Django app."""
 
     default_auto_field = "django.db.models.BigAutoField"
     name = "kite_automations"

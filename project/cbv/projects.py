@@ -516,7 +516,7 @@ class ProjectsTabView(ListView):
         return context
 
 
-# Remove the command lines after horilla converted into CBV
+# Remove the command lines after kite converted into CBV
 # from employee.cbv.employee_profile import EmployeeProfileView
 # EmployeeProfileView.add_tab(
 #     tabs=[

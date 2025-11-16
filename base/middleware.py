@@ -25,7 +25,7 @@ from kite.kite_settings import APPS
 from kite.methods import get_kite_model_class
 from kite_documents.models import DocumentRequest
 
-CACHE_KEY = "horilla_company_models_cache_key"
+CACHE_KEY = "kite_company_models_cache_key"
 
 
 class CompanyMiddleware:
@@ -103,13 +103,13 @@ class CompanyMiddleware:
         """
         is_company_model = model in self._get_company_models()
         company_field = getattr(model, "company_id", None)
-        is_horilla_manager = isinstance(model.objects, KiteCompanyManager)
+        is_kite_manager = isinstance(model.objects, KiteCompanyManager)
         related_company_field = getattr(model.objects, "related_company_field", None)
 
         if is_company_model:
             if company_field:
                 model.add_to_class("company_filter", Q(company_id=company_id))
-            elif is_horilla_manager and related_company_field:
+            elif is_kite_manager and related_company_field:
                 model.add_to_class(
                     "company_filter", Q(**{related_company_field: company_id})
                 )
@@ -119,7 +119,7 @@ class CompanyMiddleware:
                     "company_filter",
                     Q(company_id=company_id) | Q(company_id__isnull=True),
                 )
-            elif is_horilla_manager and related_company_field:
+            elif is_kite_manager and related_company_field:
                 model.add_to_class(
                     "company_filter",
                     Q(**{related_company_field: company_id})

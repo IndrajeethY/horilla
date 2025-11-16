@@ -134,9 +134,9 @@ if settings.env("AWS_ACCESS_KEY_ID", default=None) and "storages" in INSTALLED_A
 # Default LDAP settings
 DEFAULT_LDAP_CONFIG = {
     "LDAP_SERVER": settings.env("LDAP_SERVER", default="ldap://127.0.0.1:389"),
-    "BIND_DN": settings.env("BIND_DN", default="cn=admin,dc=horilla,dc=com"),
+    "BIND_DN": settings.env("BIND_DN", default="cn=admin,dc=kite,dc=com"),
     "BIND_PASSWORD": settings.env("BIND_PASSWORD", default="kite"),
-    "BASE_DN": settings.env("BASE_DN", default="ou=users,dc=horilla,dc=com"),
+    "BASE_DN": settings.env("BASE_DN", default="ou=users,dc=kite,dc=com"),
 }
 
 

@@ -40,7 +40,7 @@ class AuditTag(models.Model):
         Meta class for aditional info
         """
 
-        app_label = "horilla_audit"
+        app_label = "kite_audit"
 
 
 class KiteAuditInfo(models.Model):
@@ -58,7 +58,7 @@ class KiteAuditInfo(models.Model):
         Meta class for aditional info
         """
 
-        app_label = "horilla_audit"
+        app_label = "kite_audit"
         abstract = True
 
 
@@ -69,7 +69,7 @@ class KiteAuditLog(HistoricalRecords):
 
     # def __init__(self, *args, bases=None, **kwargs):
     #     super(KiteAuditLog, self).__init__(*args, **kwargs)
-    #     self.is_horilla_audit_log = True
+    #     self.is_kite_audit_log = True
 
     pass
 
@@ -77,7 +77,7 @@ class KiteAuditLog(HistoricalRecords):
 
 
 @receiver(pre_create_historical_record)
-def pre_create_horilla_audit_log(sender, instance, *args, **kwargs):
+def pre_create_kite_audit_log(sender, instance, *args, **kwargs):
     """
     Pre create horill audit log method
     """
@@ -100,7 +100,7 @@ def pre_create_horilla_audit_log(sender, instance, *args, **kwargs):
 
 
 @receiver(post_create_historical_record)
-def post_create_horilla_audit_log(sender, instance, *_args, **kwargs):
+def post_create_kite_audit_log(sender, instance, *_args, **kwargs):
     """
     Post create horill audit log method
     """
